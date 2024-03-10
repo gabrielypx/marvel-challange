@@ -15,7 +15,7 @@
         <a href="https://developer.marvel.com/" class="buttons btn-visit-api"
           >VISIT API</a
         >
-        <a href="#" class="buttons btn-visit-project">VISIT PROJECT</a>
+        <a href="https://github.com/gabrielypx/marvel-challange" class="buttons btn-visit-project">VISIT PROJECT</a>
       </div>
     </section>
   </div>
