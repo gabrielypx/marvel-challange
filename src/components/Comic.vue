@@ -56,7 +56,6 @@ export default {
         )
         .then((result) => {
           result.data.data.results.forEach((item) => {
-            console.log(item);
             this.comic.push(item);
             this.url = `${item.thumbnail.path}/${this.size}`;
           });
