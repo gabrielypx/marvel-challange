@@ -32,6 +32,8 @@
 <script>
 import axios from "axios";
 const public_key = import.meta.env.VITE_PUBLIC_KEY;
+import api from '@/service/api';
+
 export default {
   name: "Comic",
 
@@ -50,10 +52,9 @@ export default {
   methods: {
     getComic: function () {
       let comicId = this.$route.params.id;
-      axios
-        .get(
-          `http://gateway.marvel.com/v1/public/comics/${comicId}?apikey=${public_key}`
-        )
+      axios api.get(
+        `/comics/${comicId}?apikey=${public_key}`
+      )
         .then((result) => {
           result.data.data.results.forEach((item) => {
             this.comic.push(item);

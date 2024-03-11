@@ -61,6 +61,7 @@
 import Search from "./Search.vue";
 const public_key = import.meta.env.VITE_PUBLIC_KEY;
 import axios from "axios";
+import api from '@/service/api';
 
 export default {
   name: "Comics",
@@ -90,8 +91,8 @@ export default {
       const limit = this.pageSize;
 
       axios
-        .get(
-          `http://gateway.marvel.com/v1/public/comics?apikey=${public_key}&offset=${offset}&limit=${limit}`
+        api.get(
+          `/comics?apikey=${public_key}&offset=${offset}&limit=${limit}`
         )
         .then((result) => {
           this.comics = result.data.data.results.map((item) => ({
