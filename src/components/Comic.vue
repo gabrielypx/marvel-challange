@@ -30,9 +30,8 @@
 </template>
 
 <script>
-import axios from "axios";
 const public_key = import.meta.env.VITE_PUBLIC_KEY;
-import api from '@/service/api';
+import api from "../service/api";
 
 export default {
   name: "Comic",
@@ -52,7 +51,7 @@ export default {
   methods: {
     getComic: function () {
       let comicId = this.$route.params.id;
-      axios api.get(
+      api.get(
         `/comics/${comicId}?apikey=${public_key}`
       )
         .then((result) => {

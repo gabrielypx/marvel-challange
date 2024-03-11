@@ -60,8 +60,7 @@
 <script>
 import Search from "./Search.vue";
 const public_key = import.meta.env.VITE_PUBLIC_KEY;
-import axios from "axios";
-import api from '@/service/api';
+import api from "../service/api";
 
 export default {
   name: "Comics",
@@ -90,7 +89,6 @@ export default {
       const offset = (this.currentPage - 1) * this.pageSize;
       const limit = this.pageSize;
 
-      axios
         api.get(
           `/comics?apikey=${public_key}&offset=${offset}&limit=${limit}`
         )
